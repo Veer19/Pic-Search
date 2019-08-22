@@ -1,7 +1,7 @@
 <template>
   
   <div>
-      <div class="imageContainer" v-if="labels.includes(searchLabel)">
+      <div class="imageContainer" v-if="labels.includes(searchLabel.toLowerCase())">
         <img :src="url">
         <h2>{{name}}</h2>
       </div>
@@ -30,14 +30,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .imageContainer{
+    
     width: 300px;
-    height: 300px;
+    border-radius: 5px;
+    padding-bottom: 10px;
     overflow: hidden;
     margin: 10px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .imageContainer img {
-    height: 80%;
     width: 100%;
+    margin-bottom: 10px;
+    
 }
 </style>

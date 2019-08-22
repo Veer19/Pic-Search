@@ -1,8 +1,7 @@
 <template>
   
-  <div class="uploadButtonContainer">
+  <div class="">
     <div>
-      <input class="fileInput" type="file">
       <div class="button">{{ label }}</div>
     </div>
     
@@ -21,45 +20,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .uploadButtonContainer{
+  width: 100%;
   position: fixed;
   bottom: 50px;
   right: 50px;
   background: #f9f9f9;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.fileInput {
-  color: transparent;
-}
-.fileInput::-webkit-file-upload-button {
-  visibility: hidden;
-}
-.fileInput::before {
-  content: 'Choose File';
-  color:black;
-  display: inline-block;
-  background: white;
-  border-radius: 5px;
-  padding: 10px 15px;
-  outline: none;
-  font-size: 120%;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  cursor: pointer;
-}
-.fileInput:hover::before {
-  border-color: black;
-}
-.fileInput:active {
-  outline: 0;
-}
-.fileInput:active::before {
-  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
-}
-
 .button{
+    width: 100%;
     padding:10px;
     display: inline-block;
     color: white;
     background: #e91e63;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 </style>

@@ -19,7 +19,7 @@ var config = {
 admin.initializeApp(config);
 exports.labelDetection = functions.storage.object().onFinalize(function (object) {
     var filePath = object.name;
-    console.log(object)
+    var uid = filePath.split("/")[0];
     var fileName = filePath.split("/").pop();
     var bucket = admin.storage().bucket();
     var tempFilePath = '/tmp/' + fileName;
@@ -36,9 +36,9 @@ exports.labelDetection = functions.storage.object().onFinalize(function (object)
     .then(function (results) {
         var labelAnnotations = results[0].labelAnnotations;
         console.log('Labels:');
-        let labels = labelAnnotations.map(labelAnnotation=> {return labelAnnotation.description})
+        let labels = labelAnnotations.map(labelAnnotation=> {return (labelAnnotation.description).toLowerCase()})
         let db = admin.firestore()
-        return db.doc('imageLabels/'+fileName).set({
+        return db.doc("users/"+uid+'/imageLabels/'+fileName).set({
             name:fileName,
             labels:labels,
             url: filePath

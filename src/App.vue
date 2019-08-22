@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-
-    </div>
     <router-view/>
   </div>
 </template>
@@ -14,24 +11,9 @@
   box-sizing: border-box;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family:sans-serif;
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-  background:#3f51b5;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
